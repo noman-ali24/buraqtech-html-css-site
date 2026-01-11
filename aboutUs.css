@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f8f9fa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+.logo img {
+  height: 50px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  display: block;
+}
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #0033cc;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  display: none;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  z-index: 2000;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li a {
+  padding: 15px;
+  color: #333;
+}
+.dropdown-menu li a:hover {
+  background: #0033cc;
+  color: #fff;
+}
+
+/* Button */
+.get-started {
+  background-color: #0033cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.get-started:hover {
+  background-color: #001f99;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background-color: rgb(18, 18, 71);
+  color: white;
+  text-align: center;
+  padding: 80px 40px;
+}
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.p1 {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.stat-card {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+.stat-card h3 {
+  font-size: 40px;
+  color: white;
+}
+.stat-card h5 {
+  font-size: 22px;
+  color: white;
+}
+.stat-card p {
+  color: #ddd;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+.exploreourService,
+.getstartedtoday {
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.exploreourService {
+  background: #fff;
+  color: #103bbd;
+}
+.getstartedtoday {
+  border: 2px solid #fff;
+  color: #fff;
+}
+.exploreourService:hover,
+.getstartedtoday:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 80px 40px;
+}
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.about-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.about-card .icon {
+  background: #0e2876;
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  border-radius: 10%;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* ===== HAMBURGER (Mobile) ===== */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.nav-right.active {
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+.nav-right.active .nav-links {
+  flex-direction: column;
+  gap: 15px;
+}
+.nav-right.active .btn {
+  margin-top: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero {
+    padding: 60px 20px;
+  }
+  .hero h1 {
+    font-size: 38px;
+  }
+  .p1 {
+    font-size: 16px;
+  }
+  .about {
+    padding: 60px 20px;
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+  .exploreourService,
+  .getstartedtoday {
+    min-width: 200px;
+    font-size: 14px;
+  }
+}
